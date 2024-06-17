@@ -1,0 +1,55 @@
+﻿@page "/table"
+
+<h3>Table</h3>
+
+<div class="container">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach (var person in people)
+                {
+                    <tr>
+                        <th scope="row">@person.Id</th>
+                        <td>@person.FirstName</td>
+                        <td>@person.LastName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+
+    public class Person
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+    private List<Person> people;
+
+    protected override void OnInitialized()
+    {
+        string jsonData = @"
+        [
+            { ""Id"": 1, ""FirstName"": ""Mark"", ""LastName"": ""Otto"" },
+            { ""Id"": 2, ""FirstName"": ""Jacob"", ""LastName"": ""Thornton"" },
+            { ""Id"": 3, ""FirstName"": ""Larry"", ""LastName"": ""Bird"" }
+        ]";
+
+        people = System.Text.Json.JsonSerializer.Deserialize<List<Person>>(jsonData);
+    }
+
+  
+
+}

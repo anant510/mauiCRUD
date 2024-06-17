@@ -1,0 +1,159 @@
+﻿@page "/create-person"
+
+<h3>Table </h3>
+<div class="container">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in people)
+                {
+                    <tr>
+                        <th scope="row">@person.Id</th>
+                        <td>@person.FirstName</td>
+                        <td>@person.LastName</td>
+                        <td>
+                            <button class="btn btn-primary" @onclick="() => EditPerson(person.Id)">Edit</button>
+                            <button class="btn btn-danger" @onclick="() => DeletePerson(person.Id)">Delete Person</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@*edit page*@
+
+@if (editingPerson != null)
+{
+    <h4>Edit Person</h4>
+    <form @onsubmit="CheckSubmit">
+        <div class="mb-3">
+            <label for="editFirstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="editFirstName" @bind="editingPerson.FirstName">
+        </div>
+        <div class="mb-3">
+            <label for="editLastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="editLastName" @bind="editingPerson.LastName">
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <button type="button" class="btn btn-secondary" @onclick="CancelEdit">Cancel</button>
+    </form>
+}
+
+
+@*create page*@
+
+<h3>Create New Person</h3>
+
+<div class="container">
+    <form @onsubmit="HandleSubmit">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" @bind="newPerson.FirstName">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" @bind="newPerson.LastName">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+
+@code {
+    
+    public class Person
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
+
+    private Person newPerson = new Person();
+  
+    private List<Person> people;
+
+    protected override void OnInitialized()
+    {
+        string jsonData = @"
+        [
+            { ""Id"": 1, ""FirstName"": ""Mark"", ""LastName"": ""Otto"" },
+            { ""Id"": 2, ""FirstName"": ""Jacob"", ""LastName"": ""Thornton"" },
+            { ""Id"": 3, ""FirstName"": ""Larry"", ""LastName"": ""Bird"" }
+        ]";
+
+        people = System.Text.Json.JsonSerializer.Deserialize<List<Person>>(jsonData);
+    }
+    private void HandleSubmit()
+    {
+        
+        // Assign a new ID for the new person (in real scenarios, this could come from a database)
+        //int newId = people.Max(p => p.Id) + 1;
+        // Calculate newId by checking if people list is null or empty
+        int newId = people != null && people.Any() ? people.Max(p => p.Id) + 1 : 1;
+
+        // Create a new person object
+        Person personToAdd = new Person
+            {
+                Id = newId,
+                FirstName = newPerson.FirstName,
+                LastName = newPerson.LastName
+            };
+
+        // Add the new person to the list
+        people.Add(personToAdd);
+
+        // Reset the form
+        newPerson = new Person();
+
+        // Serialize updated list to JSON format
+        string jsonData = System.Text.Json.JsonSerializer.Serialize(people);
+        Console.WriteLine(jsonData); // This is where you can use or save the JSON data as needed
+    }
+
+    private void DeletePerson(int personId)
+    {
+        // Find the person with the specified ID
+        var personToDelete = people.FirstOrDefault(p => p.Id == personId);
+        if (personToDelete != null)
+        {
+            // Remove the person from the list
+            people.Remove(personToDelete);
+        }
+    }
+
+    //for editing
+
+    private Person editingPerson;
+
+    private void EditPerson(int personId)
+    {
+        // Find the person to edit
+        editingPerson = people.FirstOrDefault(p => p.Id == personId);
+    }
+
+    private void CheckSubmit()
+    {
+        // Optionally validate and save changes
+
+        // Reset editingPerson after saving changes
+        editingPerson = null;
+    }
+
+
+    private void CancelEdit()
+    {
+        // Cancel editing and reset editingPerson
+        editingPerson = null;
+    }
+
+}
