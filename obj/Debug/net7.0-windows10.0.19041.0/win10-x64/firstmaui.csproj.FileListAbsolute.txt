@@ -234,7 +234,6 @@ C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\hostfxr.dll
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\hostpolicy.dll
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore.dll
-C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_7.0.423.11508.dll
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordbi.dll
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscorrc.dll
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\msquic.dll
@@ -328,7 +327,6 @@ C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.AssemblyInfo.cs
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\XamlC.stamp
-C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.csproj.CopyComplete
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.dll
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\refint\firstmaui.dll
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.pdb
@@ -352,3 +350,6 @@ C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-
 C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\package-lock.json
 C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\package.json
+C:\Users\Dell\Desktop\maui\firstmaui\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_7.0.2024.26716.dll
+C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.sourcelink.json
+C:\Users\Dell\Desktop\maui\firstmaui\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\firstmaui.csproj.Up2Date

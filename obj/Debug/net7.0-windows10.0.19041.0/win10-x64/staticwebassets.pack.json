@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\Dell\\Desktop\\maui\\firstmaui\\wwwroot\\js\\pdfGenerator.js",
+      "PackagePath": "staticwebassets\\js\\pdfGenerator.js"
+    },
+    {
       "Id": "obj\\Debug\\net7.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.build.firstmaui.props",
       "PackagePath": "build\\firstmaui.props"
     },

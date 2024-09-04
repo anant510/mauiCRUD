@@ -1,4 +1,8 @@
 is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
 build_property.TargetFramework = net7.0-ios
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -10,6 +14,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = firstmaui
 build_property.RootNamespace = firstmaui
 build_property.ProjectDir = C:\Users\Dell\Desktop\maui\firstmaui\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -48,13 +54,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUGVyc29uLnJhem9y
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Dell/Desktop/maui/firstmaui/Pages/DisplayPeople.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVBlb3BsZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

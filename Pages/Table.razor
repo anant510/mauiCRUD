@@ -4,6 +4,7 @@
 
 <div class="container">
     <div class="col-md-12">
+        <input type="text" placeholder="Search by First Name" @bind="searchQuery" @oninput="OnSearchQueryChanged" />
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -13,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-               @foreach (var person in people)
+                @foreach (var person in FilteredPeople)
                 {
                     <tr>
                         <th scope="row">@person.Id</th>
@@ -26,17 +27,17 @@
     </div>
 </div>
 
-
 @code {
-
     public class Person
-{
-    public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-}
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
 
     private List<Person> people;
+    private List<Person> filteredPeople;
+    private string searchQuery = string.Empty;
 
     protected override void OnInitialized()
     {
@@ -48,8 +49,35 @@
         ]";
 
         people = System.Text.Json.JsonSerializer.Deserialize<List<Person>>(jsonData);
+        filteredPeople = people;
     }
 
-  
+    private string SearchQuery
+    {
+        get => searchQuery;
+        set
+        {
+            if (searchQuery != value)
+            {
+                searchQuery = value;
+                FilterPeople();
+                StateHasChanged(); // Notify the UI of the change
+            }
+        }
+    }
 
+    private List<Person> FilteredPeople
+    {
+        get => filteredPeople;
+    }
+
+    private void FilterPeople()
+    {
+        filteredPeople = people.Where(p => p.FirstName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    private void OnSearchQueryChanged(ChangeEventArgs e)
+    {
+        SearchQuery = e.Value.ToString();
+    }
 }
